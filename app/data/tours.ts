@@ -216,12 +216,12 @@ const rawTours: RawTour[] = [
       ar: "مغامرة جزر الديمانيات",
     },
     description: {
-      en: "Embark on an exciting one-day adventure from Muscat to explore the stunning Bidiya Desert and the lush Wadi Bani Khalid. Experience the contrast of Oman’s landscapes, from golden desert dunes to crystal-clear oasis pools surrounded by palm trees.",
-      ar: "انطلق في مغامرة مثيرة ليوم واحد من مسقط لاستكشاف صحراء بدية الخلابة ووادي بني خالد الوارف. اختبر التباين في مناظر عُمان، من كثبان الصحراء الذهبية إلى برك الواحة الصافية المحاطة بأشجار النخيل.",
+      en: "Set sail from Muscat to the pristine Dimaniyat Islands — a protected marine reserve of crystal-clear waters, vibrant coral reefs, and abundant sea life, perfect for snorkeling, swimming, and relaxing on untouched beaches.",
+      ar: "أبحر من مسقط إلى جزر الديمانيات البِكر — محمية بحرية طبيعية بمياه صافية وشعاب مرجانية نابضة بالحياة وحياة بحرية وفيرة، مثالية للغطس والسباحة والاسترخاء على شواطئ بكر.",
     },
     price: { en: "From $140", ar: "يبدأ من 140$" },
     duration: { en: "1-4 hours", ar: "من 1 إلى 4 ساعات" },
-    location: { en: "Al Hoota Cave, Oman", ar: "كهف الهوتة، عُمان" },
+    location: { en: "Dimaniyat Islands, Oman", ar: "جزر الديمانيات، عُمان" },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
     includes: {
       en: [

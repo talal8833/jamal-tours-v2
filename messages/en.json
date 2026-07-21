@@ -169,6 +169,10 @@
     "next": "Next photo",
     "close": "Close gallery"
   },
+  "whatsappFloat": {
+    "label": "Chat with Jamal on WhatsApp",
+    "message": "Hello Jamal, I would like to know more about your tours."
+  },
   "tourDetail": {
     "backToTours": "Back to Tours",
     "aboutThisTour": "About This Tour",
