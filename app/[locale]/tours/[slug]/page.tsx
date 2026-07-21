@@ -1,28 +1,50 @@
 import Image from "next/image";
-import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { Clock, Users, MapPin, ArrowLeft, CheckCircle, MessageCircle } from "lucide-react";
-import { tours } from "../../data/tours";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import { Link } from "../../../i18n/navigation";
+import { routing, type Locale } from "../../../i18n/routing";
+import { getTour, getTourSlugs } from "../../../data/tours";
+import TourGallery from "../../../components/TourGallery";
 
 type Props = {
-  params: Promise<{ slug: string }>;
+  params: Promise<{ locale: Locale; slug: string }>;
 };
 
+export function generateStaticParams() {
+  return routing.locales.flatMap((locale) =>
+    getTourSlugs().map((slug) => ({ locale, slug }))
+  );
+}
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale, slug } = await params;
+  const tour = getTour(slug, locale);
+  if (!tour) return {};
+  return { title: `${tour.name} | Jamal Tours` };
+}
+
 export default async function TourDetailPage({ params }: Props) {
-  const resolvedParams = await params;
-  const tour = tours.find((t) => t.slug === resolvedParams.slug);
+  const { locale, slug } = await params;
+  setRequestLocale(locale);
+  const tour = getTour(slug, locale);
 
   if (!tour) return notFound();
 
-  const waPhone = "968XXXXXXXX";
-  const waText = `Hello Jamal, I'm interested in the ${tour.name} tour.`;
+  const t = await getTranslations("tourDetail");
+  const tg = await getTranslations("gallery");
+
+  const waPhone = "96899266868";
+  const waText = t("whatsappText", { tourName: tour.name });
   const whatsAppUrl = `https://wa.me/${waPhone}?text=${encodeURIComponent(waText)}`;
+  const priceValue = tour.price.replace(/^From /, "").replace(/^يبدأ من /, "");
 
   return (
     <main>
       <div className="relative h-[50vh] min-h-[400px]">
         <Image
-          src={tour.image}
+          src={tour.images[0]}
           alt={tour.name}
           fill
           className="object-cover"
@@ -30,13 +52,13 @@ export default async function TourDetailPage({ params }: Props) {
           priority
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 right-0 max-w-6xl mx-auto px-6 pb-10">
+        <div className="absolute bottom-0 start-0 end-0 max-w-6xl mx-auto px-6 pb-10">
           <Link
             href="/tours"
             className="inline-flex items-center gap-2 text-white/80 hover:text-white mb-4 transition"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Tours
+            <ArrowLeft className="w-4 h-4 rtl:rotate-180" />
+            {t("backToTours")}
           </Link>
           <h1 className="text-4xl sm:text-5xl font-bold text-white">{tour.name}</h1>
           <div className="mt-4 flex flex-wrap gap-4 text-white/90 text-sm">
@@ -60,7 +82,12 @@ export default async function TourDetailPage({ params }: Props) {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           <div className="lg:col-span-2 space-y-6">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">About This Tour</h2>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{tg("photos")}</h2>
+              <TourGallery images={tour.images} alt={tour.name} />
+            </div>
+
+            <div>
+              <h2 className="text-2xl font-bold text-gray-900 mb-4">{t("aboutThisTour")}</h2>
               {tour.longDescription.map((p, idx) => (
                 <p key={idx} className="text-gray-600 leading-relaxed mb-4">
                   {p}
@@ -69,7 +96,7 @@ export default async function TourDetailPage({ params }: Props) {
             </div>
 
             <div className="bg-emerald-50 rounded-2xl p-6">
-              <h3 className="text-lg font-bold text-gray-900 mb-4">What's Included</h3>
+              <h3 className="text-lg font-bold text-gray-900 mb-4">{t("whatsIncluded")}</h3>
               <ul className="grid sm:grid-cols-2 gap-3">
                 {tour.includes.map((item, idx) => (
                   <li key={idx} className="flex items-center gap-2 text-gray-700">
@@ -84,30 +111,28 @@ export default async function TourDetailPage({ params }: Props) {
           <div className="lg:col-span-1">
             <div className="bg-white rounded-2xl shadow-xl p-6 sticky top-24">
               <div className="text-center mb-6">
-                <p className="text-sm text-gray-500">Starting from</p>
-                <p className="text-4xl font-bold text-emerald-600 mt-1">{tour.price.replace("From ", "")}</p>
-                <p className="text-sm text-gray-500 mt-1">per person</p>
+                <p className="text-sm text-gray-500">{t("startingFrom")}</p>
+                <p className="text-4xl font-bold text-emerald-600 mt-1">{priceValue}</p>
+                <p className="text-sm text-gray-500 mt-1">{t("perPerson")}</p>
               </div>
 
-              <Link
+              <a
                 href={whatsAppUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 w-full rounded-xl bg-emerald-600 py-4 text-white font-semibold hover:bg-emerald-700 transition-all shadow-lg"
               >
                 <MessageCircle className="w-5 h-5" />
-                Book Now via WhatsApp
-              </Link>
+                {t("bookViaWhatsApp")}
+              </a>
 
-              <p className="text-center text-sm text-gray-500 mt-4">
-                Or contact me to customize the tour
-              </p>
+              <p className="text-center text-sm text-gray-500 mt-4">{t("customizeText")}</p>
 
               <Link
                 href="/contact"
                 className="mt-3 flex items-center justify-center w-full rounded-xl border-2 border-emerald-600 py-3 text-emerald-600 font-semibold hover:bg-emerald-50 transition"
               >
-                Contact Page
+                {t("contactPage")}
               </Link>
             </div>
           </div>
@@ -115,8 +140,4 @@ export default async function TourDetailPage({ params }: Props) {
       </section>
     </main>
   );
-}
-
-export function generateStaticParams() {
-  return tours.map((t) => ({ slug: t.slug }));
 }

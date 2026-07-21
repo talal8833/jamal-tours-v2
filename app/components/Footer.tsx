@@ -1,7 +1,10 @@
-import Link from "next/link";
 import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { useTranslations } from "next-intl";
+import { Link } from "../i18n/navigation";
 
 export default function Footer() {
+  const t = useTranslations("footer");
+
   return (
     <footer className="bg-gradient-to-br from-emerald-800 to-emerald-900 text-white">
       <div className="max-w-6xl mx-auto px-6 py-12">
@@ -14,50 +17,50 @@ export default function Footer() {
               <span className="text-xl font-bold">Jamal Tours</span>
             </div>
             <p className="text-emerald-100 text-sm leading-relaxed">
-              Discover the beauty of Oman with a professional certified tour guide. Customized tours tailored to your interests.
+              {t("description")}
             </p>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <h3 className="font-semibold text-lg mb-4">{t("quickLinksHeading")}</h3>
             <ul className="space-y-2">
               <li>
                 <Link href="/tours" className="text-emerald-100 hover:text-white transition text-sm">
-                  Tour Packages
+                  {t("tourPackages")}
                 </Link>
               </li>
               <li>
                 <Link href="/about" className="text-emerald-100 hover:text-white transition text-sm">
-                  About Jamal
+                  {t("aboutJamal")}
                 </Link>
               </li>
               <li>
                 <Link href="/reviews" className="text-emerald-100 hover:text-white transition text-sm">
-                  Customer Reviews
+                  {t("customerReviews")}
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className="text-emerald-100 hover:text-white transition text-sm">
-                  Contact Us
+                  {t("contactUs")}
                 </Link>
               </li>
             </ul>
           </div>
 
           <div>
-            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <h3 className="font-semibold text-lg mb-4">{t("contactHeading")}</h3>
             <ul className="space-y-3">
               <li className="flex items-center gap-2 text-emerald-100 text-sm">
                 <Phone className="w-4 h-4" />
-                <span>+968 XXXX XXXX</span>
+                <span>{t("phoneValue")}</span>
               </li>
               <li className="flex items-center gap-2 text-emerald-100 text-sm">
                 <Mail className="w-4 h-4" />
-                <span>info@jamaltours.com</span>
+                <span>{t("emailValue")}</span>
               </li>
               <li className="flex items-center gap-2 text-emerald-100 text-sm">
                 <MapPin className="w-4 h-4" />
-                <span>Muscat, Sultanate of Oman</span>
+                <span>{t("locationValue")}</span>
               </li>
             </ul>
             <div className="flex gap-3 mt-4">
@@ -81,7 +84,7 @@ export default function Footer() {
 
         <div className="border-t border-emerald-700/50 mt-8 pt-6 text-center">
           <p className="text-emerald-200 text-sm">
-            © {new Date().getFullYear()} Jamal Tours - All Rights Reserved
+            © {new Date().getFullYear()} {t("rights")}
           </p>
         </div>
       </div>
