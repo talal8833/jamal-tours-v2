@@ -1,21 +1,23 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import clsx from "clsx";
 import { Menu, X, MapPin } from "lucide-react";
+import { Link, usePathname } from "../i18n/navigation";
+import LanguageSwitcher from "./LanguageSwitcher";
 
-const links = [
-  { href: "/", label: "Home" },
-  { href: "/tours", label: "Tours" },
-  { href: "/about", label: "About" },
-  { href: "/reviews", label: "Reviews" },
-  { href: "/contact", label: "Contact" },
-];
+const linkDefs = [
+  { href: "/", key: "home" },
+  { href: "/tours", key: "tours" },
+  { href: "/about", key: "about" },
+  { href: "/reviews", key: "reviews" },
+  { href: "/contact", key: "contact" },
+] as const;
 
 export default function Navbar() {
   const path = usePathname();
+  const t = useTranslations("nav");
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -31,23 +33,26 @@ export default function Navbar() {
             </span>
           </Link>
 
-          <ul className="hidden md:flex gap-1">
-            {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className={clsx(
-                    "px-4 py-2 rounded-lg font-medium transition-all duration-200",
-                    path === link.href
-                      ? "bg-emerald-50 text-emerald-700"
-                      : "text-gray-600 hover:text-emerald-600 hover:bg-emerald-50/50"
-                  )}
-                >
-                  {link.label}
-                </Link>
-              </li>
-            ))}
-          </ul>
+          <div className="hidden md:flex items-center gap-1">
+            <ul className="flex gap-1">
+              {linkDefs.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={clsx(
+                      "px-4 py-2 rounded-lg font-medium transition-all duration-200",
+                      path === link.href
+                        ? "bg-emerald-50 text-emerald-700"
+                        : "text-gray-600 hover:text-emerald-600 hover:bg-emerald-50/50"
+                    )}
+                  >
+                    {t(link.key)}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+            <LanguageSwitcher className="ms-1" />
+          </div>
 
           <button
             className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition"
@@ -66,7 +71,7 @@ export default function Navbar() {
         {isOpen && (
           <div className="md:hidden pb-4 border-t border-gray-100 pt-4">
             <ul className="flex flex-col gap-1">
-              {links.map((link) => (
+              {linkDefs.map((link) => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
@@ -78,10 +83,13 @@ export default function Navbar() {
                         : "text-gray-600 hover:text-emerald-600 hover:bg-emerald-50/50"
                     )}
                   >
-                    {link.label}
+                    {t(link.key)}
                   </Link>
                 </li>
               ))}
+              <li className="pt-1">
+                <LanguageSwitcher />
+              </li>
             </ul>
           </div>
         )}

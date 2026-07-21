@@ -1,0 +1,183 @@
+{
+  "metadata": {
+    "home": {
+      "title": "Jamal Tours | Certified Tour Guide in Oman",
+      "description": "Discover the beauty of Oman with Jamal, a certified local tour guide offering unique and unforgettable adventures."
+    },
+    "about": {
+      "title": "About Jamal | Jamal Tours",
+      "description": "Meet Jamal, your certified tour guide in the Sultanate of Oman"
+    }
+  },
+  "nav": {
+    "home": "Home",
+    "tours": "Tours",
+    "about": "About",
+    "reviews": "Reviews",
+    "contact": "Contact",
+    "language": "العربية"
+  },
+  "common": {
+    "viewDetails": "View Details",
+    "contactMe": "Contact Me",
+    "arrowLabel": "arrow"
+  },
+  "home": {
+    "heroBadge": "Certified Tour Guide in Oman",
+    "heroTitleLine1": "Discover the Magic",
+    "heroTitleLine2": "of Oman with Jamal",
+    "heroSubtitle": "Authentic adventures and customized tours through Oman's stunning landscapes with a certified local expert.",
+    "exploreTours": "Explore Tours",
+    "aboutLabel": "About Jamal",
+    "aboutHeading": "Your Trusted Guide to Discovering Oman",
+    "aboutParagraph": "With years of experience as a certified local guide, I design authentic journeys that reveal Oman's culture, landscapes, and hidden gems. Every tour is tailored to suit your interests and pace.",
+    "experienceYears": "10+ Years",
+    "experienceLabel": "Guiding Experience",
+    "statToursValue": "500+",
+    "statToursLabel": "Successful Tours",
+    "statSatisfactionValue": "100%",
+    "statSatisfactionLabel": "Customer Satisfaction",
+    "learnMore": "Learn More About Me",
+    "toursLabel": "Tours",
+    "viewDetails": "View Details",
+    "toursHeading": "Most Popular Tours",
+    "toursSubtitle": "Choose from a variety of tours designed to suit all tastes and adventures",
+    "viewAllTours": "View All Tours",
+    "benefitsLabel": "Why Jamal?",
+    "benefitsHeading": "Benefits of Traveling with Me",
+    "benefits": [
+      {
+        "title": "Certified Expert Guide",
+        "desc": "A certified local expert with years of experience in tour guiding"
+      },
+      {
+        "title": "Comfortable Transport",
+        "desc": "Clean, safe, and comfortable vehicles for every trip"
+      },
+      {
+        "title": "Customized Experiences",
+        "desc": "Tours designed specifically to suit your interests and pace"
+      },
+      {
+        "title": "Hidden Gems",
+        "desc": "Discover places only known by the locals"
+      }
+    ],
+    "reviewsLabel": "Reviews",
+    "reviewsHeading": "What Travelers Say",
+    "viewAllReviews": "View All Reviews",
+    "ctaHeading": "Ready to Explore Oman?",
+    "ctaSubtitle": "Contact me now and let's plan your perfect trip in the Sultanate of Oman",
+    "ctaBookNow": "Book Your Tour Now",
+    "ctaContactPage": "Contact Page",
+    "ctaWhatsappText": "Hello Jamal, I would like to book a tour."
+  },
+  "about": {
+    "badge": "Get to Know Me",
+    "title": "About Jamal",
+    "subtitle": "Discover the story behind Jamal Tours — your gateway to authentic Omani adventures.",
+    "badgeCardTitle": "Muscat, Oman",
+    "badgeCardLabel": "Headquarters",
+    "storyLabel": "My Story",
+    "whoHeading": "Who I Am",
+    "whoParagraph1Prefix": "My name is ",
+    "whoName": "Jamal",
+    "whoParagraph1Suffix": ", a certified tour guide based in Oman with over 10 years of experience guiding visitors from around the world. My mission is to share the beauty, history, and culture of Oman through customized tours that create unforgettable memories.",
+    "whoParagraph2": "Whether it's exploring the golden dunes of Wahiba Sands, walking through ancient forts, or enjoying refreshing wadis — I'm here to make your trip safe, informative, and truly Omani.",
+    "statYearsValue": "10+",
+    "statYearsLabel": "Years Experience",
+    "statToursValue": "500+",
+    "statToursLabel": "Successful Tours",
+    "featuresLabel": "Features",
+    "featuresHeading": "Why Choose Me",
+    "features": [
+      {
+        "title": "Officially Certified Guide",
+        "desc": "Licensed by the Omani Ministry of Heritage and Tourism"
+      },
+      {
+        "title": "Multilingual",
+        "desc": "Fluent in Arabic and English with excellent communication skills"
+      },
+      {
+        "title": "Customized Tours",
+        "desc": "Each tour is designed to suit your preferences and travel style"
+      },
+      {
+        "title": "Authentic Experiences",
+        "desc": "From Omani cuisine to secret spots off the beaten path"
+      }
+    ],
+    "ctaHeading": "Ready for an Adventure?",
+    "ctaText": "Contact me today and let's plan your perfect trip in the Sultanate of Oman.",
+    "ctaButton": "Contact Me"
+  },
+  "reviews": {
+    "badge": "Customer Reviews",
+    "title": "Traveler Testimonials",
+    "subtitle": "See what travelers are saying about their experiences with Jamal Tours.",
+    "ctaHeading": "Have you tried my tours?",
+    "ctaText": "Share your experience! I'd love to hear your feedback to improve the experience for future guests.",
+    "ctaButton": "Share Your Experience"
+  },
+  "contact": {
+    "badge": "Get in Touch",
+    "title": "Contact Me",
+    "subtitle": "Have a question or want to plan a custom tour? Reach me directly by email or WhatsApp and I'll get back to you soon.",
+    "directHeading": "Reach me directly",
+    "directText": "Send me an email or a WhatsApp message and I'll reply as soon as I can.",
+    "emailInfoLabel": "Email",
+    "emailValue": "jamal3929@hotmail.com",
+    "copyEmail": "Copy email",
+    "copied": "Copied!",
+    "sendEmail": "Send email",
+    "phoneLabel": "Phone",
+    "phoneValue": "+968 9926 6868",
+    "locationLabel": "Location",
+    "locationValue": "Muscat, Sultanate of Oman",
+    "whatsappHeading": "Prefer WhatsApp?",
+    "whatsappText": "Reach me on WhatsApp for a quick response",
+    "whatsappButton": "Chat on WhatsApp"
+  },
+  "footer": {
+    "description": "Discover the beauty of Oman with a professional certified tour guide. Customized tours tailored to your interests.",
+    "quickLinksHeading": "Quick Links",
+    "tourPackages": "Tour Packages",
+    "aboutJamal": "About Jamal",
+    "customerReviews": "Customer Reviews",
+    "contactUs": "Contact Us",
+    "contactHeading": "Contact Us",
+    "phoneValue": "+968 9926 6868",
+    "emailValue": "jamal3929@hotmail.com",
+    "locationValue": "Muscat, Sultanate of Oman",
+    "rights": "Jamal Tours - All Rights Reserved"
+  },
+  "tours": {
+    "badge": "Tour Packages",
+    "title": "Discover My Tours",
+    "subtitle": "Browse a curated selection of tours across Oman. Every experience can be customized to your interests and schedule.",
+    "viewDetails": "View Details",
+    "ctaHeading": "Can't find what you're looking for?",
+    "ctaText": "I can design a custom tour tailored exactly to your wishes and interests. Contact me to discuss your ideal trip.",
+    "ctaButton": "Contact Me"
+  },
+  "gallery": {
+    "photos": "Photos",
+    "photo": "Photo",
+    "open": "Open photo gallery",
+    "previous": "Previous photo",
+    "next": "Next photo",
+    "close": "Close gallery"
+  },
+  "tourDetail": {
+    "backToTours": "Back to Tours",
+    "aboutThisTour": "About This Tour",
+    "whatsIncluded": "What's Included",
+    "startingFrom": "Starting from",
+    "perPerson": "per person",
+    "bookViaWhatsApp": "Book Now via WhatsApp",
+    "customizeText": "Or contact me to customize the tour",
+    "contactPage": "Contact Page",
+    "whatsappText": "Hello Jamal, I'm interested in the {tourName} tour."
+  }
+}

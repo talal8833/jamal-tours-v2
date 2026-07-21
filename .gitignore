@@ -45,3 +45,5 @@ yarn-error.log*
 next-env.d.ts
 .local
 .replit
+# Local harness temp files
+.claude/*.tmp.*
