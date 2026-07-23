@@ -1,4 +1,4 @@
-import { MapPin, Phone, Mail, Instagram, Facebook } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Link } from "../i18n/navigation";
 
@@ -65,18 +65,13 @@ export default function Footer() {
             </ul>
             <div className="flex gap-3 mt-4">
               <a
-                href="#"
+                href="https://www.instagram.com/tour_guide_jamal_oman"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
                 aria-label="Instagram"
               >
                 <Instagram className="w-4 h-4" />
-              </a>
-              <a
-                href="#"
-                className="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/20 transition"
-                aria-label="Facebook"
-              >
-                <Facebook className="w-4 h-4" />
               </a>
             </div>
           </div>
