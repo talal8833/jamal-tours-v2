@@ -121,7 +121,7 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "wadi-swimming-escape",
-    images: ["/images/tour-wadi.svg", "/images/hero-oman.jpg"],
+    images: ["/images/tour-wadi.jpg", "/images/hero-oman.jpg"],
     name: {
       en: "Discover Nizwa Mountains and Markets",
       ar: "اكتشف جبال وأسواق نزوى",
