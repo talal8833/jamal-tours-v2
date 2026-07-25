@@ -43,7 +43,7 @@ const rawReviews: RawReview[] = [
     name: "Lina K.",
     countryFlag: "🇩🇪",
     countryName: { en: "Germany", ar: "ألمانيا" },
-    rating: 5,
+    rating: 4,
     text: {
       en: "The mountain views were breathtaking. Jamal kept a perfect pace and shared wonderful stories throughout the trip.",
       ar: "كانت إطلالات الجبال آسرة. حافظ جمال على إيقاع مثالي وشاركنا قصصاً رائعة طوال الرحلة.",
@@ -93,7 +93,7 @@ const rawReviews: RawReview[] = [
     name: "Marco F.",
     countryFlag: "🇮🇹",
     countryName: { en: "Italy", ar: "إيطاليا" },
-    rating: 5,
+    rating: 4,
     text: {
       en: "One of the best tour guides I've ever met. Professional and friendly at the same time.",
       ar: "من أفضل المرشدين السياحيين الذين قابلتهم على الإطلاق. محترف وودود في آنٍ واحد.",
