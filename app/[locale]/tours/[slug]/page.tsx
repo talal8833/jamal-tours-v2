@@ -139,7 +139,6 @@ export default async function TourDetailPage({ params }: Props) {
               <div className="text-center mb-6">
                 <p className="text-sm text-gray-500">{t("startingFrom")}</p>
                 <p className="text-4xl font-bold text-emerald-600 mt-1">{priceValue}</p>
-                <p className="text-sm text-gray-500 mt-1">{t("perPerson")}</p>
               </div>
 
               <a

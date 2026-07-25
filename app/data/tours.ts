@@ -29,6 +29,12 @@ export interface Tour {
   longDescription: string[];
 }
 
+// Standardized "What's Included" list, shared by every tour.
+const standardIncludes: LArr = {
+  en: ["Vehicle", "Water", "Private tour guide"],
+  ar: ["مركبة", "مياه", "مرشد سياحي خاص"],
+};
+
 const rawTours: RawTour[] = [
   {
     slug: "desert-safari-adventure",
@@ -47,20 +53,7 @@ const rawTours: RawTour[] = [
     duration: { en: "8 hours", ar: "8 ساعات" },
     location: { en: "Muscat", ar: "مسقط" },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
-    includes: {
-      en: [
-        "Round-trip transport",
-        "Traditional lunch",
-        "Water and drinks",
-        "Private tour guide",
-      ],
-      ar: [
-        "نقل ذهاباً وإياباً",
-        "غداء تقليدي",
-        "مياه ومشروبات",
-        "مرشد سياحي خاص",
-      ],
-    },
+    includes: standardIncludes,
     longDescription: {
       en: [
         "Discover the vibrant city of Muscat, where centuries-old tradition seamlessly blends with contemporary elegance.",
@@ -102,10 +95,7 @@ const rawTours: RawTour[] = [
       ar: "الموقع: هاوية نجم ووادي شاب",
     },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
-    includes: {
-      en: ["Round-trip transport", "Light snack", "Hiking gear", "Specialized guide"],
-      ar: ["نقل ذهاباً وإياباً", "وجبة خفيفة", "معدات المشي الجبلي", "مرشد متخصص"],
-    },
+    includes: standardIncludes,
     longDescription: {
       en: [
         "Discover the breathtaking natural wonders of Oman on a scenic journey starting from Muscat with a visit to Wadi Shab and Hawiyat Najm (Bimmah Sinkhole)",
@@ -134,10 +124,7 @@ const rawTours: RawTour[] = [
     duration: { en: "8 hours", ar: "8 ساعات" },
     location: { en: "Nizwa & Jabal Al Akhdar", ar: "نزوى والجبل الأخضر" },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
-    includes: {
-      en: ["Round-trip transport", "Swimming gear", "Light snack", "Local guide"],
-      ar: ["نقل ذهاباً وإياباً", "معدات السباحة", "وجبة خفيفة", "مرشد محلي"],
-    },
+    includes: standardIncludes,
     longDescription: {
       en: [
         "Swim in crystal-clear pools and walk through lush wadi passages in one of Oman's most beloved wadis.",
@@ -167,20 +154,7 @@ const rawTours: RawTour[] = [
       ar: "صحراء بدية ووادي بني خالد",
     },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
-    includes: {
-      en: [
-        "4x4 vehicle",
-        "Drinks and snacks",
-        "Photography equipment",
-        "Specialized crew",
-      ],
-      ar: [
-        "مركبة دفع رباعي",
-        "مشروبات ووجبات خفيفة",
-        "معدات تصوير",
-        "طاقم متخصص",
-      ],
-    },
+    includes: standardIncludes,
     longDescription: {
       en: [
         "Embark on an exciting one-day adventure from Muscat to explore the stunning Bidiya Desert and the lush Wadi Bani Khalid. Experience the contrast of Oman’s landscapes, from golden desert dunes to crystal-clear oasis pools surrounded by palm trees.",
@@ -223,20 +197,7 @@ const rawTours: RawTour[] = [
     duration: { en: "1-4 hours", ar: "من 1 إلى 4 ساعات" },
     location: { en: "Dimaniyat Islands, Oman", ar: "جزر الديمانيات، عُمان" },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
-    includes: {
-      en: [
-        "Comfortable transport",
-        "Heritage site entry",
-        "Cultural guide",
-        "Local lunch",
-      ],
-      ar: [
-        "وسيلة نقل مريحة",
-        "دخول الموقع التراثي",
-        "مرشد ثقافي",
-        "غداء محلي",
-      ],
-    },
+    includes: standardIncludes,
     longDescription: {
       en: [
         "Embark on an unforgettable journey to the pristine Dimaniyat Islands, a tropical paradise just off the coast of Oman. Known for their crystal-clear waters, vibrant coral reefs, and abundant marine life, these islands are perfect for snorkeling, swimming, and relaxing on untouched beaches.",
@@ -277,20 +238,7 @@ const rawTours: RawTour[] = [
     duration: { en: "Full Day", ar: "يوم كامل" },
     location: { en: "Muscat Coast, Oman", ar: "ساحل مسقط، عُمان" },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
-    includes: {
-      en: [
-        "Round-trip transport",
-        "Entry tickets",
-        "Exploration gear",
-        "Specialized guide",
-      ],
-      ar: [
-        "نقل ذهاباً وإياباً",
-        "تذاكر الدخول",
-        "معدات الاستكشاف",
-        "مرشد متخصص",
-      ],
-    },
+    includes: standardIncludes,
     longDescription: {
       en: [
         "Discover the Wonders of Oman in 7 Unforgettable Days Embark on an extraordinary journey that will reveal the breathtaking beauty of Oman in just 7 days. From pristine islands to dramatic mountains, lush wadis, and historic forts, this adventure blends nature, culture, and heritage for an unforgettable experience..",
