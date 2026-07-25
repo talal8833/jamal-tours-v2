@@ -8,13 +8,9 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppFloat from "../components/WhatsAppFloat";
 import { routing } from "../i18n/routing";
+import { siteUrl, siteName } from "../siteConfig";
 
 const cairo = Cairo({ subsets: ["arabic", "latin"], display: "swap" });
-
-// Set NEXT_PUBLIC_SITE_URL to the production domain so canonical/hreflang/OG
-// tags use absolute URLs. Falls back to the Vercel project URL.
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || "https://jamal-tours-v2.vercel.app";
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -44,7 +40,7 @@ export async function generateMetadata({
     },
     openGraph: {
       type: "website",
-      siteName: "Jamal Tours",
+      siteName,
       title,
       description,
       url: `/${locale}`,
@@ -81,13 +77,37 @@ export default async function LocaleLayout({
 
   setRequestLocale(locale);
   const messages = await getMessages();
+  const tMeta = await getTranslations("metadata.home");
   const dir = locale === "ar" ? "rtl" : "ltr";
+
+  const businessJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TravelAgency",
+    name: siteName,
+    url: `${siteUrl}/${locale}`,
+    image: `${siteUrl}/images/hero-oman.jpg`,
+    description: tMeta("description"),
+    telephone: "+968 9926 6868",
+    email: "jamal3929@hotmail.com",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "Muscat",
+      addressCountry: "OM",
+    },
+    areaServed: { "@type": "Country", name: "Oman" },
+    sameAs: ["https://www.instagram.com/tour_guide_jamal_oman"],
+    priceRange: "$$",
+  };
 
   return (
     <html lang={locale} dir={dir}>
       <body
         className={`${locale === "ar" ? cairo.className : ""} bg-gradient-to-b from-gray-50 to-white text-gray-800 antialiased`}
       >
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(businessJsonLd) }}
+        />
         <NextIntlClientProvider messages={messages}>
           <Navbar />
           {children}

@@ -7,6 +7,7 @@ import { Link } from "../../../i18n/navigation";
 import { routing, type Locale } from "../../../i18n/routing";
 import { getTour, getTourSlugs } from "../../../data/tours";
 import TourGallery from "../../../components/TourGallery";
+import { siteUrl, siteName } from "../../../siteConfig";
 
 type Props = {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -40,8 +41,33 @@ export default async function TourDetailPage({ params }: Props) {
   const whatsAppUrl = `https://wa.me/${waPhone}?text=${encodeURIComponent(waText)}`;
   const priceValue = tour.price.replace(/^From /, "").replace(/^يبدأ من /, "");
 
+  const priceMatch = tour.price.match(/\d+/);
+  const tourJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: tour.name,
+    description: tour.description,
+    image: tour.images.map((img) => `${siteUrl}${img}`),
+    brand: { "@type": "Brand", name: siteName },
+    ...(priceMatch
+      ? {
+          offers: {
+            "@type": "Offer",
+            price: priceMatch[0],
+            priceCurrency: "USD",
+            availability: "https://schema.org/InStock",
+            url: `${siteUrl}/${locale}/tours/${tour.slug}`,
+          },
+        }
+      : {}),
+  };
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(tourJsonLd) }}
+      />
       <div className="relative h-[50vh] min-h-[400px]">
         <Image
           src={tour.images[0]}
