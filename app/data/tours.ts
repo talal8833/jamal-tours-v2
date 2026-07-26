@@ -78,7 +78,7 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "mountain-hiking-experience",
-    images: ["/images/tour-mountain.jpg", "/images/hero-oman.jpg"],
+    images: ["/images/wadishab-1.jpg", "/images/wadishab-2.jpg", "/images/wadishab-3.jpg"],
     name: {
       en: "Explore Wadi Shab",
       ar: "استكشف وادي شاب",
