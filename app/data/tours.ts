@@ -38,9 +38,8 @@ const standardIncludes: LArr = {
 const rawTours: RawTour[] = [
   {
     slug: "desert-safari-adventure",
-    // First image is the cover. Add as many photo paths as you like — they appear
-    // in the card carousel and the detail-page gallery. (Placeholder extras for now.)
-    images: ["/images/tour-desert.jfif", "/images/hero-oman.jpg"],
+    // First image is the cover; the rest fill the card carousel + detail gallery.
+    images: ["/images/muscat-1.jpg", "/images/muscat-2.jpg", "/images/muscat-3.jpg"],
     name: {
       en: "Discover Magical Muscat",
       ar: "اكتشف مسقط الساحرة",
@@ -111,7 +110,7 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "wadi-swimming-escape",
-    images: ["/images/tour-wadi.jpg", "/images/hero-oman.jpg"],
+    images: ["/images/nizwa-1.jpg", "/images/nizwa-2.jpg", "/images/nizwa-3.jpg"],
     name: {
       en: "Discover Nizwa Mountains and Markets",
       ar: "اكتشف جبال وأسواق نزوى",
