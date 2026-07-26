@@ -137,7 +137,7 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "coastal-sunset-cruise",
-    images: ["/images/tour-coast.svg", "/images/hero-oman.jpg"],
+    images: ["/images/desert-1.jpg", "/images/desert-2.jpg"],
     name: {
       en: "Desert & Oasis Adventure",
       ar: "مغامرة الصحراء والواحة",
@@ -183,7 +183,7 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "cultural-muscat-city-tour",
-    images: ["/images/tour-city.svg", "/images/hero-oman.jpg"],
+    images: ["/images/dimaniyat-1.jpg", "/images/dimaniyat-2.jpg", "/images/dimaniyat-3.jpg"],
     name: {
       en: "Dimaniyat Islands Adventure",
       ar: "مغامرة جزر الديمانيات",
@@ -224,7 +224,13 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "cave-exploration-journey",
-    images: ["/images/tour-cave.svg", "/images/hero-oman.jpg"],
+    // Flagship 7-day tour: reuses a diverse mix of the other tours' best shots.
+    images: [
+      "/images/desert-2.jpg",
+      "/images/muscat-1.jpg",
+      "/images/wadishab-1.jpg",
+      "/images/nizwa-3.jpg",
+    ],
     name: {
       en: "Explore Oman 7 Days of Magic",
       ar: "استكشف عُمان: 7 أيام من السحر",
