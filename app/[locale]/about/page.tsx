@@ -62,7 +62,6 @@ export default async function AboutPage({
               </div>
               <div>
                 <p className="font-bold text-gray-900">{t("badgeCardTitle")}</p>
-                <p className="text-sm text-gray-500">{t("badgeCardLabel")}</p>
               </div>
             </div>
           </div>

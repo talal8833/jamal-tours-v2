@@ -1,8 +1,9 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Warm near-white ground + warm near-black ink (was pure #fff / #171717) */
+  --background: #fbf9f5;
+  --foreground: #1b1712;
 }
 
 @theme inline {
@@ -12,17 +13,73 @@
   --font-mono: var(--font-geist-mono);
 }
 
+/*
+  Refined brand palette. We keep every existing utility class (emerald-*, gray-*)
+  but redefine the underlying tokens, so the whole site shifts to a richer emerald
+  and warmer, sand-tinted neutrals in one place — no markup churn, SEO untouched.
+*/
+@theme {
+  /* Neutrals: warm stone instead of Tailwind's cool blue-gray.
+     gray-50 is a touch deeper than the page ground so alternating
+     section bands (and small stat cards) stay visible. */
+  --color-gray-50: #f2ede3;
+  --color-gray-100: #ebe5da;
+  --color-gray-200: #e2dbce;
+  --color-gray-300: #d6cfc1;
+  --color-gray-400: #a89f8f;
+  --color-gray-500: #7a7264;
+  --color-gray-600: #574f42;
+  --color-gray-700: #403a30;
+  --color-gray-800: #2a251d;
+  --color-gray-900: #1b1712;
+
+  /* Emerald: deeper, more jewel-toned and less neon */
+  --color-emerald-50: #eef6f1;
+  --color-emerald-100: #d4ebdf;
+  --color-emerald-200: #a9d8bf;
+  --color-emerald-300: #83c9a6;
+  --color-emerald-400: #34c08a;
+  --color-emerald-500: #12a374;
+  --color-emerald-600: #0c7d59;
+  --color-emerald-700: #0a6549;
+  --color-emerald-800: #0a5540;
+  --color-emerald-900: #083f2f;
+}
+
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
+/* Typography polish: balanced wrapping everywhere; tighter tracking for Latin
+   headings only (negative tracking hurts Arabic/Cairo, so scope it to LTR). */
+h1,
+h2,
+h3 {
+  text-wrap: balance;
+}
+
+html[dir="ltr"] h1,
+html[dir="ltr"] h2,
+html[dir="ltr"] h3 {
+  letter-spacing: -0.02em;
+}
+
 ::selection {
-  background-color: #10b98133;
-  color: #064e3b;
+  background-color: #0c7d5926;
+  color: #08442f;
+}
+
+/* Visible keyboard focus for accessibility */
+:focus-visible {
+  outline: 2px solid var(--color-emerald-600);
+  outline-offset: 2px;
+  border-radius: 4px;
 }

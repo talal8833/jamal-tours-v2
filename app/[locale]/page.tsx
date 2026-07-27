@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { ShieldCheck, Car, Sparkles, MapPin, Star, ArrowRight } from "lucide-react";
+import { ShieldCheck, Car, Sparkles, MapPin, Star, ArrowRight, Clock } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../i18n/navigation";
 import type { Locale } from "../i18n/routing";
@@ -43,7 +43,7 @@ export default async function HomePage({
 
   return (
     <main>
-      <section className="relative w-full min-h-[70vh] flex items-center">
+      <section className="relative w-full min-h-[76vh] flex items-center">
         <div className="absolute inset-0">
           <Image
             src="/images/hero-oman.jpg"
@@ -53,18 +53,19 @@ export default async function HomePage({
             priority
             sizes="100vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30" />
+          <div className="absolute inset-0 bg-gradient-to-r from-black/85 via-black/55 to-black/20" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-black/10" />
         </div>
-        <div className="relative max-w-6xl mx-auto px-6 py-24 sm:py-32">
+        <div className="relative w-full max-w-6xl mx-auto px-6 py-20 sm:py-32">
           <div className="max-w-2xl">
             <span className="inline-block px-4 py-1.5 rounded-full bg-emerald-500/20 text-emerald-300 text-sm font-medium mb-6 backdrop-blur-sm border border-emerald-400/30">
               {t("heroBadge")}
             </span>
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.08] tracking-tight">
               {t("heroTitleLine1")}
               <span className="block text-emerald-400 mt-2">{t("heroTitleLine2")}</span>
             </h1>
-            <p className="mt-6 text-lg text-white/90 leading-relaxed">
+            <p className="mt-6 text-lg text-white/90 leading-relaxed max-w-xl">
               {t("heroSubtitle")}
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
@@ -81,6 +82,22 @@ export default async function HomePage({
               >
                 {t("ctaContactPage")}
               </Link>
+            </div>
+            <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-4 border-t border-white/15 pt-6">
+              <div>
+                <p className="text-2xl font-bold text-white">{t("statToursValue")}</p>
+                <p className="text-sm text-white/70">{t("statToursLabel")}</p>
+              </div>
+              <div className="hidden sm:block h-9 w-px bg-white/15" aria-hidden="true" />
+              <div>
+                <p className="text-2xl font-bold text-white">{t("statSatisfactionValue")}</p>
+                <p className="text-sm text-white/70">{t("statSatisfactionLabel")}</p>
+              </div>
+              <div className="hidden sm:block h-9 w-px bg-white/15" aria-hidden="true" />
+              <div>
+                <p className="text-2xl font-bold text-white">{t("experienceYears")}</p>
+                <p className="text-sm text-white/70">{t("experienceLabel")}</p>
+              </div>
             </div>
           </div>
         </div>
@@ -154,7 +171,7 @@ export default async function HomePage({
             {popularTours.map((tour) => (
               <article
                 key={tour.slug}
-                className="group overflow-hidden rounded-2xl bg-white shadow-sm hover:shadow-xl transition-all duration-300"
+                className="group flex flex-col overflow-hidden rounded-2xl bg-white ring-1 ring-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="relative h-56 overflow-hidden">
                   <TourImageCarousel
@@ -163,21 +180,34 @@ export default async function HomePage({
                     sizes="(max-width: 1024px) 100vw, 33vw"
                   />
                   <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                  <span className="absolute top-4 start-4 z-20 inline-flex items-center gap-1 bg-white/90 backdrop-blur-sm text-gray-700 font-medium px-3 py-1 rounded-full text-xs">
+                    <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                    {tour.location}
+                  </span>
                   <span className="absolute bottom-4 start-4 z-20 bg-white/90 backdrop-blur-sm text-emerald-700 font-bold px-4 py-1.5 rounded-full text-sm">
                     {tour.price}
                   </span>
                 </div>
-                <div className="p-6">
+                <div className="flex flex-1 flex-col p-6">
                   <h3 className="text-xl font-bold text-gray-900 group-hover:text-emerald-600 transition">
                     {tour.name}
                   </h3>
-                  <Link
-                    href={`/tours/${tour.slug}`}
-                    className="mt-4 inline-flex items-center gap-2 text-emerald-600 font-semibold hover:text-emerald-700 transition"
-                  >
-                    {t("viewDetails")}
-                    <ArrowRight className="w-4 h-4 rtl:rotate-180" />
-                  </Link>
+                  <p className="mt-2 mb-5 text-sm text-gray-600 leading-relaxed line-clamp-2">
+                    {tour.description}
+                  </p>
+                  <div className="mt-auto flex items-center justify-between gap-2 border-t border-gray-100 pt-4">
+                    <span className="inline-flex items-center gap-1.5 text-sm text-gray-500">
+                      <Clock className="w-4 h-4" />
+                      {tour.duration}
+                    </span>
+                    <Link
+                      href={`/tours/${tour.slug}`}
+                      className="inline-flex items-center gap-1.5 text-sm text-emerald-600 font-semibold hover:text-emerald-700 transition"
+                    >
+                      {t("viewDetails")}
+                      <ArrowRight className="w-4 h-4 rtl:rotate-180" />
+                    </Link>
+                  </div>
                 </div>
               </article>
             ))}
