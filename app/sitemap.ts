@@ -4,7 +4,7 @@ import { getTourSlugs } from "./data/tours";
 import { siteUrl } from "./siteConfig";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const staticPaths = ["", "/tours", "/about", "/reviews", "/contact"];
+  const staticPaths = ["", "/tours", "/about", "/reviews", "/contact", "/privacy", "/terms"];
   const tourPaths = getTourSlugs().map((slug) => `/tours/${slug}`);
   const paths = [...staticPaths, ...tourPaths];
 
