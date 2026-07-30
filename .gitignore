@@ -47,3 +47,6 @@ next-env.d.ts
 .replit
 # Local harness temp files
 .claude/*.tmp.*
+
+# Private local notes (never deploy or commit)
+/notes/
