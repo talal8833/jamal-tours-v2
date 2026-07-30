@@ -77,10 +77,21 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-emerald-700/50 mt-8 pt-6 text-center">
+        <div className="border-t border-emerald-700/50 mt-8 pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-center">
           <p className="text-emerald-200 text-sm">
             © {new Date().getFullYear()} {t("rights")}
           </p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-emerald-200 hover:text-white transition text-sm">
+              {t("privacyPolicy")}
+            </Link>
+            <span className="text-emerald-700" aria-hidden="true">
+              |
+            </span>
+            <Link href="/terms" className="text-emerald-200 hover:text-white transition text-sm">
+              {t("terms")}
+            </Link>
+          </div>
         </div>
       </div>
     </footer>
