@@ -7,7 +7,7 @@ import { Link } from "../../../i18n/navigation";
 import { routing, type Locale } from "../../../i18n/routing";
 import { getTour, getTourSlugs } from "../../../data/tours";
 import TourGallery from "../../../components/TourGallery";
-import { siteUrl, siteName } from "../../../siteConfig";
+import { siteUrl, siteName, buildAlternates } from "../../../siteConfig";
 
 type Props = {
   params: Promise<{ locale: Locale; slug: string }>;
@@ -23,7 +23,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const tour = getTour(slug, locale);
   if (!tour) return {};
-  return { title: `${tour.name} | Jamal Tours` };
+  return {
+    title: `${tour.name} | Jamal Tours`,
+    alternates: buildAlternates(locale, `/tours/${slug}`),
+  };
 }
 
 export default async function TourDetailPage({ params }: Props) {
