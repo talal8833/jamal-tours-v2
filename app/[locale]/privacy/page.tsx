@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import LegalPageLayout from "../../components/LegalPageLayout";
 import type { Locale } from "../../i18n/routing";
+import { buildAlternates } from "../../siteConfig";
 
 type Section = { heading: string; body: string[] };
 
@@ -15,16 +16,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
-    // Self-referencing canonical + hreflang (otherwise this page inherits the
-    // layout's homepage canonical, which would flag it as a duplicate).
-    alternates: {
-      canonical: `/${locale}/privacy`,
-      languages: {
-        en: "/en/privacy",
-        ar: "/ar/privacy",
-        "x-default": "/en/privacy",
-      },
-    },
+    alternates: buildAlternates(locale, "/privacy"),
   };
 }
 

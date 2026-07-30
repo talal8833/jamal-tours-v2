@@ -4,6 +4,7 @@ import { ShieldCheck, Award, Languages, Heart, MapPin, ArrowRight } from "lucide
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../i18n/navigation";
 import type { Locale } from "../../i18n/routing";
+import { buildAlternates } from "../../siteConfig";
 
 const featureIcons = [ShieldCheck, Languages, Heart, Award];
 
@@ -19,6 +20,7 @@ export async function generateMetadata({
   return {
     title: t("title"),
     description: t("description"),
+    alternates: buildAlternates(locale, "/about"),
   };
 }
 

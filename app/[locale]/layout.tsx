@@ -8,7 +8,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import WhatsAppFloat from "../components/WhatsAppFloat";
 import { routing } from "../i18n/routing";
-import { siteUrl, siteName } from "../siteConfig";
+import { siteUrl, siteName, buildAlternates } from "../siteConfig";
 
 const cairo = Cairo({ subsets: ["arabic", "latin"], display: "swap" });
 
@@ -30,14 +30,9 @@ export async function generateMetadata({
     metadataBase: new URL(siteUrl),
     title,
     description,
-    alternates: {
-      canonical: `/${locale}`,
-      languages: {
-        en: "/en",
-        ar: "/ar",
-        "x-default": "/en",
-      },
-    },
+    // Homepage alternates. Child pages MUST override this with their own path via
+    // buildAlternates() — otherwise they inherit this homepage canonical.
+    alternates: buildAlternates(locale, ""),
     openGraph: {
       type: "website",
       siteName,

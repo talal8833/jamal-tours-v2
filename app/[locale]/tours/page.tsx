@@ -1,9 +1,20 @@
+import type { Metadata } from "next";
 import { Clock, Users, ArrowRight } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../i18n/navigation";
 import type { Locale } from "../../i18n/routing";
 import { getTours } from "../../data/tours";
+import { buildAlternates } from "../../siteConfig";
 import TourImageCarousel from "../../components/TourImageCarousel";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: buildAlternates(locale, "/tours") };
+}
 
 export default async function ToursPage({
   params,

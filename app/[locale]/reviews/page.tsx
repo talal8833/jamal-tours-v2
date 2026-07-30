@@ -1,8 +1,19 @@
+import type { Metadata } from "next";
 import { Star, Quote } from "lucide-react";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Link } from "../../i18n/navigation";
 import type { Locale } from "../../i18n/routing";
 import { getReviews } from "../../data/reviews";
+import { buildAlternates } from "../../siteConfig";
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  return { alternates: buildAlternates(locale, "/reviews") };
+}
 
 function Stars({ value }: { value: number }) {
   return (
