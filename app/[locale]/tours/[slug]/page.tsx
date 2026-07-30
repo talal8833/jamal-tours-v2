@@ -42,32 +42,35 @@ export default async function TourDetailPage({ params }: Props) {
   const priceValue = tour.price.replace(/^From /, "").replace(/^يبدأ من /, "");
 
   const priceMatch = tour.price.match(/\d+/);
-  const tourJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    name: tour.name,
-    description: tour.description,
-    image: tour.images.map((img) => `${siteUrl}${img}`),
-    brand: { "@type": "Brand", name: siteName },
-    ...(priceMatch
-      ? {
-          offers: {
-            "@type": "Offer",
-            price: priceMatch[0],
-            priceCurrency: "USD",
-            availability: "https://schema.org/InStock",
-            url: `${siteUrl}/${locale}/tours/${tour.slug}`,
-          },
-        }
-      : {}),
-  };
+  // Only emit Product structured data when we have a parseable price, so `offers`
+  // is always present. A Product with no offers/review/aggregateRating is invalid
+  // (Google drops it and flags a critical error), so we render nothing instead.
+  const tourJsonLd = priceMatch
+    ? {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        name: tour.name,
+        description: tour.description,
+        image: tour.images.map((img) => `${siteUrl}${img}`),
+        brand: { "@type": "Brand", name: siteName },
+        offers: {
+          "@type": "Offer",
+          price: priceMatch[0],
+          priceCurrency: "USD",
+          availability: "https://schema.org/InStock",
+          url: `${siteUrl}/${locale}/tours/${tour.slug}`,
+        },
+      }
+    : null;
 
   return (
     <main>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(tourJsonLd) }}
-      />
+      {tourJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(tourJsonLd) }}
+        />
+      )}
       <div className="relative h-[50vh] min-h-[400px]">
         <Image
           src={tour.images[0]}

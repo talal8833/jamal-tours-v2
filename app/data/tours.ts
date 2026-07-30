@@ -239,7 +239,7 @@ const rawTours: RawTour[] = [
       en: "Discover the Wonders of Oman in 7 Unforgettable DaysEmbark on an extraordinary journey that will reveal the breathtaking beauty of Oman in just 7 days. From pristine islands to dramatic mountains, lush wadis, and historic forts, this adventure blends nature, culture, and heritage for an unforgettable experience",
       ar: "اكتشف عجائب عُمان في 7 أيام لا تُنسى. انطلق في رحلة استثنائية تكشف لك جمال عُمان الأخّاذ في 7 أيام فقط. من الجزر البكر إلى الجبال الشامخة والأودية الوارفة والقلاع التاريخية، تمزج هذه المغامرة بين الطبيعة والثقافة والتراث لتجربة لا تُنسى.",
     },
-    price: { en: "contact for price", ar: "تواصل لمعرفة السعر" },
+    price: { en: "From $1200", ar: "يبدأ من 1200$" },
     duration: { en: "Full Day", ar: "يوم كامل" },
     location: { en: "Muscat Coast, Oman", ar: "ساحل مسقط، عُمان" },
     groupSize: { en: "1-4 people", ar: "من 1 إلى 4 أشخاص" },
