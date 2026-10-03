@@ -156,7 +156,13 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "coastal-sunset-cruise",
-    images: ["/images/desert-1.jpg", "/images/desert-2.jpg"],
+    images: [
+      "/images/desert-1.jpg",
+      "/images/desert-2.jpg",
+      "/images/desert-3.jpg",
+      "/images/desert-4.jpg",
+      "/images/desert-5.jpg",
+    ],
     name: {
       en: "Desert & Oasis Adventure",
       ar: "مغامرة الصحراء والواحة",
@@ -245,7 +251,7 @@ const rawTours: RawTour[] = [
     slug: "cave-exploration-journey",
     // Flagship 7-day tour: reuses a diverse mix of the other tours' best shots.
     images: [
-      "/images/desert-2.jpg",
+      "/images/explore-desert.jpg",
       "/images/muscat-1.jpg",
       "/images/wadishab-1.jpg",
       "/images/explore-nizwa.jpg",
