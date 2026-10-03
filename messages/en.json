@@ -2,11 +2,11 @@
   "metadata": {
     "home": {
       "title": "Private Tour Guide in Oman & Muscat Tours | Jamal Tours",
-      "description": "Private tours in Oman with Jamal, a certified local tour guide in Muscat. Day trips to Wadi Shab, Nizwa, Jebel Akhdar, Wahiba desert and the Dimaniyat Islands, plus a 7-day Oman tour."
+      "description": "Private tours in Oman with Jamal, a licensed local tour guide in Muscat. Day trips to Wadi Shab, Nizwa, Jebel Akhdar, Wahiba desert and the Dimaniyat Islands, plus a 7-day Oman tour."
     },
     "about": {
-      "title": "About Jamal, Certified Tour Guide in Oman | Jamal Tours",
-      "description": "Meet Jamal, a certified Omani tour guide based in Muscat, offering private tours and day trips across Oman."
+      "title": "About Jamal, Licensed Tour Guide in Oman | Jamal Tours",
+      "description": "Meet Jamal, a licensed Omani tour guide based in Muscat, offering private tours and day trips across Oman."
     },
     "privacy": {
       "title": "Privacy Policy | Jamal Tours",
@@ -22,7 +22,7 @@
     },
     "reviews": {
       "title": "Reviews of Jamal, Tour Guide in Oman | Jamal Tours",
-      "description": "Read what travelers say about their private tours in Oman with Jamal, a certified local tour guide based in Muscat."
+      "description": "Read what travelers say about their private tours in Oman with Jamal, a licensed local tour guide based in Muscat."
     },
     "contact": {
       "title": "Book a Private Tour Guide in Oman | Jamal Tours",
@@ -43,7 +43,7 @@
     "arrowLabel": "arrow"
   },
   "home": {
-    "heroBadge": "Certified Tour Guide in Oman",
+    "heroBadge": "Licensed Tour Guide in Oman",
     "heroTitleLine1": "Private Tours in Oman",
     "heroTitleLine2": "with Jamal, Your Local Guide",
     "heroSubtitle": "Authentic adventures and customized tours through Oman's stunning landscapes with a certified local expert.",
@@ -101,7 +101,7 @@
     "whoHeading": "Who I Am",
     "whoParagraph1Prefix": "My name is ",
     "whoName": "Jamal",
-    "whoParagraph1Suffix": ", a certified tour guide based in Oman with over 10 years of experience guiding visitors from around the world. My mission is to share the beauty, history, and culture of Oman through customized tours that create unforgettable memories.",
+    "whoParagraph1Suffix": ", a licensed tour guide based in Oman with over 10 years of experience guiding visitors from around the world. My mission is to share the beauty, history, and culture of Oman through customized tours that create unforgettable memories.",
     "whoParagraph2": "Whether it's exploring the golden dunes of Wahiba Sands, walking through ancient forts, or enjoying refreshing wadis — I'm here to make your trip safe, informative, and truly Omani.",
     "statYearsValue": "10+",
     "statYearsLabel": "Years Experience",
@@ -111,7 +111,7 @@
     "featuresHeading": "Why Choose Me",
     "features": [
       {
-        "title": "Officially Certified Guide",
+        "title": "Officially Licensed Guide",
         "desc": "Licensed by the Omani Ministry of Heritage and Tourism"
       },
       {
