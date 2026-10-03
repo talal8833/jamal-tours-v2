@@ -23,9 +23,23 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale, slug } = await params;
   const tour = getTour(slug, locale);
   if (!tour) return {};
+  const title = `${tour.seoTitle} | ${locale === "ar" ? "جمال تورز" : siteName}`;
+  const description = tour.seoDescription;
   return {
-    title: `${tour.name} | Jamal Tours`,
+    title,
+    description,
     alternates: buildAlternates(locale, `/tours/${slug}`),
+    // Override the layout's homepage OG/Twitter so shared links show this tour.
+    openGraph: {
+      type: "website",
+      siteName,
+      title,
+      description,
+      url: `/${locale}/tours/${slug}`,
+      locale: locale === "ar" ? "ar_OM" : "en_US",
+      images: [{ url: tour.images[0], alt: tour.name }],
+    },
+    twitter: { card: "summary_large_image", title, description, images: [tour.images[0]] },
   };
 }
 

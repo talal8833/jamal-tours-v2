@@ -13,7 +13,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: buildAlternates(locale, "/tours") };
+  const t = await getTranslations({ locale, namespace: "metadata.tours" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: buildAlternates(locale, "/tours"),
+  };
 }
 
 export default async function ToursPage({

@@ -5,6 +5,7 @@ type LArr = { en: string[]; ar: string[] };
 
 interface RawTour {
   slug: string;
+  seo: { title: L; description: L };
   images: string[];
   name: L;
   description: L;
@@ -19,6 +20,8 @@ interface RawTour {
 export interface Tour {
   name: string;
   slug: string;
+  seoTitle: string;
+  seoDescription: string;
   description: string;
   price: string;
   duration: string;
@@ -38,6 +41,14 @@ const standardIncludes: LArr = {
 const rawTours: RawTour[] = [
   {
     slug: "desert-safari-adventure",
+    // Search-engine title/description (shown in Google results and link previews).
+    seo: {
+      title: { en: "Muscat City Tour: Grand Mosque, Muttrah Souq & More", ar: "جولة مدينة مسقط: الجامع الأكبر وسوق مطرح والمزيد" },
+      description: {
+        en: "Private Muscat city tour with a local guide: Sultan Qaboos Grand Mosque, Royal Opera House, Muttrah Corniche and Souq, Al Alam Palace and the National Museum.",
+        ar: "جولة خاصة في مسقط مع مرشد محلي: جامع السلطان قابوس الأكبر، دار الأوبرا السلطانية، كورنيش وسوق مطرح، قصر العلم، والمتحف الوطني.",
+      },
+    },
     // First image is the cover; the rest fill the card carousel + detail gallery.
     images: ["/images/muscat-1.jpg", "/images/muscat-2.jpg", "/images/muscat-3.jpg"],
     name: {
@@ -78,6 +89,14 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "mountain-hiking-experience",
+    // Search-engine title/description (shown in Google results and link previews).
+    seo: {
+      title: { en: "Wadi Shab & Bimmah Sinkhole Day Trip from Muscat", ar: "رحلة يومية إلى وادي شاب وهاوية نجم من مسقط" },
+      description: {
+        en: "Private day trip from Muscat to Wadi Shab and the Bimmah Sinkhole (Hawiyat Najm): hike to turquoise pools, swim to hidden waterfalls and caves, and enjoy the coast road.",
+        ar: "رحلة يومية خاصة من مسقط إلى وادي شاب وهاوية نجم (سنكهول بيمة): مشي بين البرك الفيروزية، وسباحة إلى الشلالات والكهوف الخفية، وطريق ساحلي خلاب.",
+      },
+    },
     images: ["/images/wadishab-1.jpg", "/images/wadishab-2.jpg", "/images/wadishab-3.jpg"],
     name: {
       en: "Explore Wadi Shab",
@@ -110,6 +129,14 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "wadi-swimming-escape",
+    // Search-engine title/description (shown in Google results and link previews).
+    seo: {
+      title: { en: "Nizwa Fort, Souq & Jebel Akhdar Day Trip from Muscat", ar: "رحلة يومية إلى قلعة نزوى وسوقها والجبل الأخضر" },
+      description: {
+        en: "Private day trip from Muscat to Nizwa Fort and Souq, the Friday livestock market, Birkat Al Mauz and the terraces of Jebel Akhdar (Green Mountain).",
+        ar: "رحلة يومية خاصة من مسقط إلى قلعة نزوى وسوقها، وسوق الهبطة يوم الجمعة، وبركة الموز، ومدرجات الجبل الأخضر.",
+      },
+    },
     images: [
       "/images/nizwa-1.jpg",
       "/images/nizwa-2.jpg",
@@ -156,6 +183,14 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "coastal-sunset-cruise",
+    // Search-engine title/description (shown in Google results and link previews).
+    seo: {
+      title: { en: "Wahiba Desert & Wadi Bani Khalid Day Trip from Muscat", ar: "رحلة يومية إلى صحراء بدية ووادي بني خالد من مسقط" },
+      description: {
+        en: "Private day trip from Muscat to the golden dunes of Bidiya (Wahiba Sands) and the turquoise pools of Wadi Bani Khalid, with snacks and drinks included.",
+        ar: "رحلة يومية خاصة من مسقط إلى كثبان صحراء بدية (رمال الشرقية) الذهبية وبرك وادي بني خالد الفيروزية، مع وجبات خفيفة ومشروبات.",
+      },
+    },
     images: [
       "/images/desert-1.jpg",
       "/images/desert-2.jpg",
@@ -218,6 +253,14 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "cultural-muscat-city-tour",
+    // Search-engine title/description (shown in Google results and link previews).
+    seo: {
+      title: { en: "Dimaniyat Islands Snorkeling Trip from Muscat", ar: "رحلة الغطس في جزر الديمانيات من مسقط" },
+      description: {
+        en: "Boat trip from Muscat to the Dimaniyat Islands nature reserve: snorkel coral reefs, spot sea turtles and relax on untouched beaches. Snacks and drinks included.",
+        ar: "رحلة بحرية من مسقط إلى محمية جزر الديمانيات: غطس بين الشعاب المرجانية، ومشاهدة السلاحف البحرية، واسترخاء على شواطئ بكر، مع وجبات خفيفة ومشروبات.",
+      },
+    },
     images: ["/images/dimaniyat-1.jpg", "/images/dimaniyat-2.jpg", "/images/dimaniyat-3.jpg"],
     name: {
       en: "Dimaniyat Islands Adventure",
@@ -259,6 +302,14 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "cave-exploration-journey",
+    // Search-engine title/description (shown in Google results and link previews).
+    seo: {
+      title: { en: "7-Day Oman Tour: Muscat, Wadis, Desert & Mountains", ar: "جولة عُمان في 7 أيام: مسقط والأودية والصحراء والجبال" },
+      description: {
+        en: "Private 7-day Oman itinerary: Muscat, Dimaniyat Islands, Wadi Shab, Sur and turtle nesting at Ras Al Jinz, a Bidiya desert camp, Nizwa, Jebel Akhdar and Jebel Shams.",
+        ar: "برنامج خاص لمدة 7 أيام في عُمان: مسقط، جزر الديمانيات، وادي شاب، صور وتعشيش السلاحف في رأس الجنز، مخيم صحراوي في بدية، نزوى، الجبل الأخضر وجبل شمس.",
+      },
+    },
     // Flagship 7-day tour: reuses a diverse mix of the other tours' best shots.
     images: [
       "/images/explore-desert.jpg",
@@ -307,6 +358,8 @@ const rawTours: RawTour[] = [
 function localize(t: RawTour, locale: Locale): Tour {
   return {
     slug: t.slug,
+    seoTitle: t.seo.title[locale],
+    seoDescription: t.seo.description[locale],
     name: t.name[locale],
     description: t.description[locale],
     price: t.price[locale],

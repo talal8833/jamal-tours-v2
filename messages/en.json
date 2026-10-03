@@ -1,12 +1,12 @@
 {
   "metadata": {
     "home": {
-      "title": "Jamal Tours | Certified Tour Guide in Oman",
-      "description": "Discover the beauty of Oman with Jamal, a certified local tour guide offering unique and unforgettable adventures."
+      "title": "Private Tour Guide in Oman & Muscat Tours | Jamal Tours",
+      "description": "Private tours in Oman with Jamal, a certified local tour guide in Muscat. Day trips to Wadi Shab, Nizwa, Jebel Akhdar, Wahiba desert and the Dimaniyat Islands, plus a 7-day Oman tour."
     },
     "about": {
-      "title": "About Jamal | Jamal Tours",
-      "description": "Meet Jamal, your certified tour guide in the Sultanate of Oman"
+      "title": "About Jamal, Certified Tour Guide in Oman | Jamal Tours",
+      "description": "Meet Jamal, a certified Omani tour guide based in Muscat, offering private tours and day trips across Oman."
     },
     "privacy": {
       "title": "Privacy Policy | Jamal Tours",
@@ -15,6 +15,18 @@
     "terms": {
       "title": "Terms & Booking Conditions | Jamal Tours",
       "description": "The booking, cancellation, safety, and liability terms for tours arranged with Jamal Tours in Oman."
+    },
+    "tours": {
+      "title": "Oman Tours & Day Trips from Muscat | Jamal Tours",
+      "description": "Private Oman tours from Muscat: Muscat city tour, Wadi Shab, Nizwa and Jebel Akhdar, Wahiba desert and Wadi Bani Khalid, Dimaniyat Islands snorkeling and a 7-day Oman tour."
+    },
+    "reviews": {
+      "title": "Reviews of Jamal, Tour Guide in Oman | Jamal Tours",
+      "description": "Read what travelers say about their private tours in Oman with Jamal, a certified local tour guide based in Muscat."
+    },
+    "contact": {
+      "title": "Book a Private Tour Guide in Oman | Jamal Tours",
+      "description": "Contact Jamal on WhatsApp to book a private tour in Oman or plan a custom itinerary from Muscat."
     }
   },
   "nav": {
@@ -32,8 +44,8 @@
   },
   "home": {
     "heroBadge": "Certified Tour Guide in Oman",
-    "heroTitleLine1": "Discover the Magic",
-    "heroTitleLine2": "of Oman with Jamal",
+    "heroTitleLine1": "Private Tours in Oman",
+    "heroTitleLine2": "with Jamal, Your Local Guide",
     "heroSubtitle": "Authentic adventures and customized tours through Oman's stunning landscapes with a certified local expert.",
     "exploreTours": "Explore Tours",
     "aboutLabel": "About Jamal",

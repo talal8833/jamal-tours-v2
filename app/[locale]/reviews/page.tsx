@@ -12,7 +12,12 @@ export async function generateMetadata({
   params: Promise<{ locale: string }>;
 }): Promise<Metadata> {
   const { locale } = await params;
-  return { alternates: buildAlternates(locale, "/reviews") };
+  const t = await getTranslations({ locale, namespace: "metadata.reviews" });
+  return {
+    title: t("title"),
+    description: t("description"),
+    alternates: buildAlternates(locale, "/reviews"),
+  };
 }
 
 function Stars({ value }: { value: number }) {
