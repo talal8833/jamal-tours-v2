@@ -110,7 +110,18 @@ const rawTours: RawTour[] = [
   },
   {
     slug: "wadi-swimming-escape",
-    images: ["/images/nizwa-1.jpg", "/images/nizwa-2.jpg", "/images/nizwa-3.jpg"],
+    images: [
+      "/images/nizwa-1.jpg",
+      "/images/nizwa-2.jpg",
+      "/images/nizwa-3.jpg",
+      "/images/nizwa-4.jpg",
+      "/images/nizwa-5.jpg",
+      "/images/nizwa-6.jpg",
+      "/images/nizwa-7.jpg",
+      "/images/nizwa-8.jpg",
+      "/images/nizwa-9.jpg",
+      "/images/nizwa-10.jpg",
+    ],
     name: {
       en: "Discover Nizwa Mountains and Markets",
       ar: "اكتشف جبال وأسواق نزوى",
@@ -126,12 +137,20 @@ const rawTours: RawTour[] = [
     includes: standardIncludes,
     longDescription: {
       en: [
-        "Swim in crystal-clear pools and walk through lush wadi passages in one of Oman's most beloved wadis.",
-        "Perfect for relaxation and enjoying the beauty of turquoise waters and shaded oases.",
+        "Embark on an unforgettable journey through Oman’s stunning landscapes and rich cultural heritage.",
+        "Begin with a scenic drive through the majestic Hajar Mountains, where dramatic valleys, rugged peaks, and charming traditional villages set the stage for an authentic Omani experience.",
+        "Your first stop is Nizwa, a historic city famous for its grand fort and vibrant souq. Wander through bustling marketplaces, including the Date Market, Omani Sweet Market, Traditional Weapons Market, Spice Market, and Handicrafts Market, where you can find exquisite pottery, silver jewelry, artisanal crafts, and delicious local treats. Visit on a Friday, and you’ll experience the fascinating Livestock Auction Market, where locals buy and sell goats, sheep, and cattle – a truly unique glimpse into Omani tradition.",
+        "Next, explore the tranquil village of Birkat Al Mauz, an oasis surrounded by lush date palm plantations. Its name, “Birkat Al Mauz” (Banana Pool), reflects a time when the area was abundant with banana trees, giving the village its distinctive identity. Stroll through its narrow streets and admire the traditional mud-brick houses, while the ancient Falaj Al-Khatmeen, a UNESCO World Heritage site, channels water through the village, sustaining agriculture and showcasing Oman’s ingenious heritage.",
+        "The adventure culminates at the Green Mountain (Jebel Akhdar), famous for its cool climate, terraced orchards, fragrant rose gardens, and panoramic mountain vistas. Enjoy scenic walks, capture breathtaking photos, and immerse yourself in the peaceful beauty of one of Oman’s most spectacular landscapes.",
+        "This extraordinary route perfectly blends culture, history, and nature, offering travelers an immersive and magical Omani experience that will leave unforgettable memories.",
       ],
       ar: [
-        "اسبح في البرك الصافية وتجوّل عبر ممرات الوادي الوارفة في أحد أحبّ أودية عُمان.",
-        "مثالية للاسترخاء والاستمتاع بجمال المياه الفيروزية والواحات الظليلة.",
+        "انطلق في رحلة لا تُنسى عبر مناظر عُمان الخلابة وتراثها الثقافي الغني.",
+        "تبدأ الرحلة بطريق ساحر عبر جبال الحجر الشامخة، حيث الأودية المهيبة والقمم الوعرة والقرى التقليدية الجميلة التي تمهّد لتجربة عُمانية أصيلة.",
+        "محطتك الأولى نزوى، المدينة التاريخية الشهيرة بقلعتها العظيمة وسوقها النابض بالحياة. تجوّل بين أسواقها المتنوعة، ومنها سوق التمور وسوق الحلوى العُمانية وسوق الأسلحة التقليدية وسوق البهارات وسوق الصناعات الحرفية، حيث تجد الفخار الرائع والمجوهرات الفضية والمشغولات اليدوية والمأكولات المحلية اللذيذة. وإن كانت زيارتك يوم الجمعة، فستشهد سوق الهبطة لبيع المواشي، حيث يبيع الأهالي ويشترون الماعز والأغنام والأبقار بالمزاد، في مشهد فريد من التقاليد العُمانية.",
+        "بعدها استكشف قرية بركة الموز الهادئة، الواحة المحاطة بمزارع النخيل الوارفة. ويعود اسمها «بركة الموز» إلى زمن كانت فيه أشجار الموز تملأ المكان، فمنحت القرية هويتها المميزة. تجوّل في أزقتها الضيقة وتأمّل بيوتها الطينية التقليدية، بينما يشق فلج الخطمين العريق، المدرج ضمن قائمة التراث العالمي لليونسكو، طريقه عبر القرية ليروي مزارعها ويشهد على عبقرية التراث العُماني.",
+        "وتُختتم المغامرة في الجبل الأخضر، الشهير بأجوائه المعتدلة ومدرجاته الزراعية وبساتين الورد العطرة وإطلالاته الجبلية البانورامية. استمتع بالمشي بين المناظر الخلابة، والتقط صوراً مذهلة، وانغمس في الجمال الهادئ لواحد من أروع المشاهد الطبيعية في عُمان.",
+        "تجمع هذه الرحلة الاستثنائية بين الثقافة والتاريخ والطبيعة، لتمنح المسافرين تجربة عُمانية ساحرة تترك ذكريات لا تُنسى.",
       ],
     },
   },
@@ -229,7 +248,7 @@ const rawTours: RawTour[] = [
       "/images/desert-2.jpg",
       "/images/muscat-1.jpg",
       "/images/wadishab-1.jpg",
-      "/images/nizwa-3.jpg",
+      "/images/explore-nizwa.jpg",
     ],
     name: {
       en: "Explore Oman 7 Days of Magic",
